@@ -14,7 +14,7 @@ const AreasComponent = () => {
 
   useEffect(() => {
     setArea({
-      bgColor: "physical",
+      bgColor: string.areaBgColor.physical,
       buttonTag: string.button.next,
       isActive: true,
     });
@@ -30,14 +30,14 @@ const AreasComponent = () => {
     switch (eventId) {
       case string.tabs.physical:
         setArea({
-          bgColor: "physical",
+          bgColor: string.areaBgColor.physical,
           buttonTag: string.button.next,
           isActive: true,
         });
         break;
       case string.tabs.social:
         setArea({
-          bgColor: "social",
+          bgColor: string.areaBgColor.social,
           buttonTag: string.button.finished,
           isActive: true,
         });
@@ -74,7 +74,9 @@ const AreasComponent = () => {
         {skill ? (
           <>
             <hr />
-            <h1 className="skill-title">{`Skill: ${skill.title || ""} `}</h1>
+            <h1 className="skill-title">{`Skill: ${
+              skill.title || ""
+            }. Age Range: ${skill.age_range || ""}. `}</h1>
             <p>{skill.description}</p>
           </>
         ) : (

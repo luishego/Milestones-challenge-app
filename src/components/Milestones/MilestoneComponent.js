@@ -3,6 +3,7 @@ import { string } from "../../globals";
 import "./MilestoneComponent.css";
 
 const MilestoneComponent = ({ milestone }) => {
+  console.log(milestone);
   let [buttonState, setButtonState] = useState({
     label: "",
     style: "",
@@ -49,7 +50,9 @@ const MilestoneComponent = ({ milestone }) => {
     <>
       <div className="milestone-container">
         <section className="milestone-element">
-          <h2 className="milestone-title">{milestone.title}</h2>
+          <h2 className="milestone-title">
+            {milestone.title} {`Age: ${milestone.age}`}
+          </h2>
           <span className="milestone-subtitle">{milestone.description}</span>
         </section>
 

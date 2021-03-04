@@ -16,4 +16,8 @@ export const string = {
     uncompleted: "uncompleted",
     completed: "completed",
   },
+  areaBgColor: {
+    physical: "physical",
+    social: "social",
+  },
 };
