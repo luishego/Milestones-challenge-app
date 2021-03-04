@@ -10,21 +10,21 @@ const MilestoneComponent = ({ milestone }) => {
     clicked: null,
   });
   useEffect(() => {
-    if (!milestone.master) {
-      setButtonState({
-        label: string.button.notAnswered,
-        style: string.buttonStyles.notAnswered,
-        master: milestone.master,
-        clicked: null,
-      });
-    } else {
-      setButtonState({
-        label: string.button.completed,
-        style: string.buttonStyles.completed,
-        master: true,
-        clicked: false,
-      });
-    }
+    setButtonState(() =>
+      !milestone.master
+        ? {
+            label: string.button.notAnswered,
+            style: string.buttonStyles.notAnswered,
+            master: milestone.master,
+            clicked: null,
+          }
+        : {
+            label: string.button.completed,
+            style: string.buttonStyles.completed,
+            master: true,
+            clicked: false,
+          }
+    );
   }, [milestone.master]);
 
   const handleClick = () => {
