@@ -1,0 +1,30 @@
+.milestone-container {
+  align-items: baseline;
+  background-color: white;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin: 0 0 0 2.5%;
+  width: 95%;
+}
+.milestone-container:last-child {
+  border-radius: 0 0 8px 8px;
+}
+.milestone-element {
+  flex-flow: column;
+  margin: 0 1em 1em 5em;
+}
+.milestone-title {
+  align-self: flex-start;
+}
+.milestone-subtitle {
+  align-self: flex-start;
+}
+
+.check-button {
+  color: white;
+  background-color: #75b753;
+  border-radius: 30px;
+  margin: 1em 5em 0 1em;
+  width: 10vw;
+}

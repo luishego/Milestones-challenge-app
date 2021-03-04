@@ -1,0 +1,66 @@
+.area-container {
+  align-content: center;
+  background-color: #1faddf;
+  border-radius: 9px 9px 0 0;
+  color: white;
+  display: flex;
+  flex-flow: column wrap;
+  height: 45%;
+  justify-content: center;
+  margin: 2% 0 0 2.5%;
+  width: 95%;
+}
+
+.main-title {
+  font-size: 25px;
+  align-self: center;
+}
+.tab-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 1%;
+  width: 100%;
+}
+.tab-button {
+  color: white;
+  background-color: transparent;
+  width: 20vw;
+}
+
+.tab-button:focus {
+  background-color: white;
+}
+
+.physical-button {
+  border-radius: 100px 0px 0px 100px;
+}
+.physical-button:focus {
+  color: #1faddf;
+}
+
+.social-button:focus {
+  color: #d43571;
+}
+
+.social-button {
+  border-radius: 0px 100px 100px 0px;
+}
+
+hr {
+  width: 45%;
+  background-color: white;
+  border: 1px solid white;
+}
+.skill-title {
+  align-self: center;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0;
+}
