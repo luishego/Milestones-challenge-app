@@ -1,6 +1,5 @@
 .area-container {
   align-content: center;
-  background-color: #1faddf;
   border-radius: 9px 9px 0 0;
   color: white;
   display: flex;
@@ -10,7 +9,12 @@
   margin: 2% 0 0 2.5%;
   width: 95%;
 }
-
+.physical {
+  background-color: #1faddf;
+}
+.social {
+  background-color: #d43571;
+}
 .main-title {
   font-size: 25px;
   align-self: center;
