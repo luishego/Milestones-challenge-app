@@ -10,7 +10,7 @@ const AreasComponent = () => {
     buttonTag: "",
     isActive: null,
   });
-  const [skill, setSkill] = useState({});
+  const [skill, setSkill] = useState("");
 
   useEffect(() => {
     setArea({
@@ -81,11 +81,13 @@ const AreasComponent = () => {
           ""
         )}
       </div>
-      {skill.milestones?.map((milestone) => (
-        <>
-          <MilestoneComponent key={milestone.id} milestone={milestone} />
-        </>
-      ))}
+      {skill.milestones?.map((milestone) => {
+        return (
+          <>
+            <MilestoneComponent key={milestone.id} milestone={milestone} />
+          </>
+        );
+      })}
       {area.isActive && (
         <section className="botomm-btn-container">
           <button className="botomm-btn">{area.buttonTag}</button>

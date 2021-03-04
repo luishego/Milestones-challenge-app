@@ -3,20 +3,47 @@ import { string } from "../../globals";
 import "./MilestoneComponent.css";
 
 const MilestoneComponent = ({ milestone }) => {
-  const [buttonState, setButtonState] = useState({
-    label: string.button.uncompleted,
-    style: "not-answered",
-    master: milestone.master,
+  let [buttonState, setButtonState] = useState({
+    label: "",
+    style: "",
+    master: "",
+    clicked: null,
   });
   useEffect(() => {
     if (!milestone.master) {
       setButtonState({
-        label: string.button.uncompleted,
-        style: "not-answered",
+        label: string.button.notAnswered,
+        style: string.buttonStyles.notAnswered,
         master: milestone.master,
+        clicked: null,
+      });
+    } else {
+      setButtonState({
+        label: string.button.completed,
+        style: string.buttonStyles.completed,
+        master: true,
+        clicked: false,
       });
     }
   }, [milestone.master]);
+
+  const handleClick = () => {
+    setButtonState(() =>
+      !buttonState.clicked
+        ? {
+            label: string.button.uncompleted,
+            clicked: true,
+            style: string.buttonStyles.uncompleted,
+            master: false,
+          }
+        : {
+            label: string.button.completed,
+            clicked: false,
+            style: string.buttonStyles.completed,
+            master: true,
+          }
+    );
+  };
 
   return (
     <>
@@ -26,7 +53,10 @@ const MilestoneComponent = ({ milestone }) => {
           <span className="milestone-subtitle">{milestone.description}</span>
         </section>
 
-        <button className={`check-button ${buttonState.style}`}>
+        <button
+          onClick={handleClick}
+          className={`check-button ${buttonState.style}`}
+        >
           {buttonState.label}
         </button>
       </div>

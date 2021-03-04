@@ -11,4 +11,9 @@ export const string = {
     next: "Next",
     finished: "Finish assessment",
   },
+  buttonStyles: {
+    notAnswered: "not-answered",
+    uncompleted: "uncompleted",
+    completed: "completed",
+  },
 };
