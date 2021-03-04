@@ -1,16 +1,19 @@
 import { string } from "../../globals";
+import AreasComponent from "../Areas/AreasComponent";
 import "./MilestoneComponent.css";
 
 const MilestoneComponent = ({ milestone }) => {
   return (
-    <div className="milestone-container">
-      <section className="milestone-element">
-        <h2 className="milestone-title">{milestone.title}</h2>
-        <span className="milestone-subtitle">{milestone.description}</span>
-      </section>
+    <>
+      <div className="milestone-container">
+        <section className="milestone-element">
+          <h2 className="milestone-title">{milestone.title}</h2>
+          <span className="milestone-subtitle">{milestone.description}</span>
+        </section>
 
-      <button className="check-button"> {string.button.completed} </button>
-    </div>
+        <button className="check-button"> {string.button.completed} </button>
+      </div>
+    </>
   );
 };
 

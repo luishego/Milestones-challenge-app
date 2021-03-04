@@ -1,23 +1,32 @@
 import "./AreasComponent.css";
 import { string } from "../../globals";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchMilestones } from "../../services/FetchMilestones";
 import MilestoneComponent from "../Milestones/MilestoneComponent";
 
 const AreasComponent = () => {
   const [skill, setSkill] = useState({});
+  const [buttonTag, setButtonTag] = useState("");
+
+  useEffect(() => {
+    fetchMilestones(string.tabs.physical).then(({ skill }) => {
+      setSkill(skill);
+    });
+  }, []);
 
   const handleClick = (e) => {
     selectAtributesById(e.target.id);
   };
   const selectAtributesById = (eventId) => {
+    console.log(eventId);
     const backgroundAttributes = document.querySelector(".area-container");
     switch (eventId) {
-      case "physical":
+      case string.tabs.physical:
+        setButtonTag(string.button.next);
         backgroundAttributes.style.backgroundColor = "#1FADDF";
-
         break;
-      case "social":
+      case string.tabs.social:
+        setButtonTag(string.button.finished);
         backgroundAttributes.style.backgroundColor = "#D43571";
         break;
       default:
@@ -35,7 +44,7 @@ const AreasComponent = () => {
         <section className="tab-container">
           <button
             className="tab-button physical-button"
-            id="physical"
+            id={string.tabs.physical}
             onClick={handleClick}
             type="button"
           >
@@ -43,7 +52,7 @@ const AreasComponent = () => {
           </button>
           <button
             className="tab-button  social-button"
-            id="social"
+            id={string.tabs.social}
             onClick={handleClick}
             type="button"
           >
@@ -61,8 +70,15 @@ const AreasComponent = () => {
         )}
       </div>
       {skill.milestones?.map((milestone, idx) => (
-        <MilestoneComponent key={idx} milestone={milestone} />
+        <>
+          <MilestoneComponent key={idx} milestone={milestone} />
+        </>
       ))}
+      {buttonTag && (
+        <section className="botomm-btn-container">
+          <button className="botomm-btn">{buttonTag}</button>
+        </section>
+      )}
     </>
   );
 };

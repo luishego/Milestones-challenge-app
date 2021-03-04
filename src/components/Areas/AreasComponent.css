@@ -64,3 +64,21 @@ p {
   margin-right: 10%;
   margin-top: 0;
 }
+
+.botomm-btn-container {
+  align-items: center;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1em 2.5%;
+  width: 95%;
+}
+
+.botomm-btn {
+  color: white;
+  background-color: #75b753;
+  border-radius: 30px;
+  margin: 2em 0 2em 0;
+  width: 18vw;
+}
