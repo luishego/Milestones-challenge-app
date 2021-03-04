@@ -81,9 +81,9 @@ const AreasComponent = () => {
           ""
         )}
       </div>
-      {skill.milestones?.map((milestone, idx) => (
+      {skill.milestones?.map((milestone) => (
         <>
-          <MilestoneComponent key={idx} milestone={milestone} />
+          <MilestoneComponent key={milestone.id} milestone={milestone} />
         </>
       ))}
       {area.isActive && (
