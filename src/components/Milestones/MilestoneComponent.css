@@ -12,7 +12,8 @@
 }
 .milestone-element {
   flex-flow: column;
-  margin: 0 1em 1em 5em;
+  margin: 0 1em 1em 2em;
+  max-width: 70%;
 }
 .milestone-title {
   align-self: flex-start;

@@ -19,7 +19,6 @@ const AreasComponent = () => {
         break;
       case "social":
         backgroundAttributes.style.backgroundColor = "#D43571";
-
         break;
       default:
         return;
@@ -61,8 +60,8 @@ const AreasComponent = () => {
           ""
         )}
       </div>
-      {skill.milestones?.map((milestone) => (
-        <MilestoneComponent milestone={milestone} />
+      {skill.milestones?.map((milestone, idx) => (
+        <MilestoneComponent key={idx} milestone={milestone} />
       ))}
     </>
   );
