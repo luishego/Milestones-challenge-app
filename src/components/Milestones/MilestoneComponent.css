@@ -1,11 +1,14 @@
 .milestone-container {
-  align-items: baseline;
+  align-items: center;
   background-color: white;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   margin: 0 0 0 2.5%;
   width: 95%;
+}
+.milestone-container:not(:last-child) {
+  border-bottom: 1px solid #eeeeee;
 }
 .milestone-element {
   flex-flow: column;
@@ -17,22 +20,4 @@
 }
 .milestone-subtitle {
   align-self: flex-start;
-}
-
-.check-button {
-  border-radius: 30px;
-  margin: 1em 5em 0 1em;
-  width: 10vw;
-}
-.not-answered {
-  color: grey;
-  background-color: #eeeeee;
-}
-.uncompleted {
-  color: #75b753;
-  background-color: #eeeeee;
-}
-.completed {
-  color: white;
-  background-color: #75b753;
 }

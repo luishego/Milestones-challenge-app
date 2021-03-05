@@ -1,51 +1,12 @@
-import { useEffect, useState } from "react";
-import { string } from "../../globals";
+import { useState } from "react";
 import "./MilestoneComponent.css";
+import MilestoneButtonComponent from "../MilestonButtonComponent/MilestonButtonComponent";
 
 const MilestoneComponent = ({ milestone }) => {
-  console.log(milestone);
-  let [buttonState, setButtonState] = useState({
-    label: "",
-    style: "",
-    master: "",
-    clicked: null,
+  const [buttonState] = useState({
+    id: milestone.id,
+    master: milestone.master,
   });
-  useEffect(() => {
-    setButtonState(() =>
-      !milestone.master
-        ? {
-            label: string.button.notAnswered,
-            style: string.buttonStyles.notAnswered,
-            master: milestone.master,
-            clicked: null,
-          }
-        : {
-            label: string.button.completed,
-            style: string.buttonStyles.completed,
-            master: true,
-            clicked: false,
-          }
-    );
-  }, [milestone.master]);
-
-  const handleClick = () => {
-    setButtonState(() =>
-      !buttonState.clicked
-        ? {
-            label: string.button.uncompleted,
-            clicked: true,
-            style: string.buttonStyles.uncompleted,
-            master: false,
-          }
-        : {
-            label: string.button.completed,
-            clicked: false,
-            style: string.buttonStyles.completed,
-            master: true,
-          }
-    );
-  };
-
   return (
     <>
       <div className="milestone-container">
@@ -55,13 +16,7 @@ const MilestoneComponent = ({ milestone }) => {
           </h2>
           <span className="milestone-subtitle">{milestone.description}</span>
         </section>
-
-        <button
-          onClick={handleClick}
-          className={`check-button ${buttonState.style}`}
-        >
-          {buttonState.label}
-        </button>
+        <MilestoneButtonComponent buttonStateProps={buttonState} />
       </div>
     </>
   );
