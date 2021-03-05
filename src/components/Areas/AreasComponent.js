@@ -3,6 +3,7 @@ import { string } from "../../globals";
 import { useEffect, useState } from "react";
 import { fetchMilestones } from "../../services/FetchMilestones";
 import MilestoneComponent from "../Milestones/MilestoneComponent";
+import AreaButtonComponent from "./AreaButtonComponent/AreaButtonComponent";
 
 const AreasComponent = () => {
   const [area, setArea] = useState({
@@ -10,6 +11,7 @@ const AreasComponent = () => {
     buttonTag: "",
     isActive: null,
   });
+  const [activeTab, setActiveTab] = useState(string.tabs.physical);
   const [skill, setSkill] = useState("");
 
   useEffect(() => {
@@ -24,6 +26,7 @@ const AreasComponent = () => {
   }, []);
 
   const handleClick = (e) => {
+    setActiveTab(e.target.id);
     selectAtributesById(e.target.id);
   };
   const selectAtributesById = (eventId) => {
@@ -49,6 +52,7 @@ const AreasComponent = () => {
       setSkill(skill);
     });
   };
+  console.log();
   return (
     <>
       <div className={`area-container ${area.bgColor}`}>
@@ -91,9 +95,9 @@ const AreasComponent = () => {
         );
       })}
       {area.isActive && (
-        <section className="botomm-btn-container">
-          <button className="botomm-btn">{area.buttonTag}</button>
-        </section>
+        <>
+          <AreaButtonComponent activeTab={activeTab} />
+        </>
       )}
     </>
   );
