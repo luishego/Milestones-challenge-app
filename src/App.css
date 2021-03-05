@@ -6,7 +6,7 @@ button {
   font-family: "Quicksand";
   font-size: 20px;
   font-weight: 600;
-  height: auto;
+  height: 6vh;
 }
 button:focus {
   border: none;

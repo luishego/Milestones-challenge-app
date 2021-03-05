@@ -52,7 +52,6 @@ const AreasComponent = () => {
       setSkill(skill);
     });
   };
-  console.log();
   return (
     <>
       <div className={`area-container ${area.bgColor}`}>
