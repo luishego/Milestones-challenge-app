@@ -1,32 +1,31 @@
-import { useState } from "react";
-import { string } from "../../globals";
+import { useContext, useState } from "react";
+import { SkillsContext } from "../../../SkillsContext";
+import { buttonStyle } from "./fixture";
 import "./MilestonButtonComponent.css";
 const MilestoneButtonComponent = ({ buttonStateProps }) => {
+  const { setMilestoneArr } = useContext(SkillsContext);
   const [buttonState, setButtonState] = useState({
     ...buttonStateProps,
-    style: buttonStateProps.master
-      ? string.buttonStyles.completed
-      : string.buttonStyles.notAnswered,
-    label: buttonStateProps.master
-      ? string.button.completed
-      : string.button.notAnswered,
-    clicked: buttonStateProps.master ? true : false,
+    ...buttonStyle[buttonStateProps.master ? "completed" : "notAnswered"],
   });
 
   const handleClick = () => {
     buttonState.clicked = !buttonState.clicked;
+
     buttonState.clicked
       ? setButtonState({
           ...buttonState,
-          style: string.buttonStyles.completed,
-          label: string.button.completed,
+          ...buttonStyle.completed,
         })
       : setButtonState({
           ...buttonState,
-          style: string.buttonStyles.uncompleted,
-          label: string.button.uncompleted,
+          ...buttonStyle.uncompleted,
         });
+    setMilestoneArr({
+      ...buttonState,
+    });
   };
+
   return (
     <button
       onClick={handleClick}

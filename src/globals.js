@@ -1,8 +1,8 @@
 export const string = {
   title: "Areas",
   tabs: {
-    physical: "Physical",
-    social: "Social & Emotional",
+    physical: { label: "Physical", value: "physical" },
+    social: { label: "Social & Emotional", value: "social" },
   },
   button: {
     notAnswered: "Not answered",
@@ -15,9 +15,5 @@ export const string = {
     notAnswered: "not-answered",
     uncompleted: "uncompleted",
     completed: "completed",
-  },
-  areaBgColor: {
-    physical: "physical",
-    social: "social",
   },
 };

@@ -1,0 +1,31 @@
+{
+    "data":{
+       "skill":{
+          "id":2,
+          "area_id":4,
+          "age_range":"1 - 16",
+          "parent_skill_id":null,
+          "title":"Secure attachment",
+          "description":"Child shows signs of secure attachment with parents and important adults. For example, by calming down in their presence, smiling at others, stretching arms to be carried, and showing affection or affinity for familiar people.",
+          "logo_web":"https://kinedu-staging.s3.amazonaws.com/system/skills/logo_webs/000/000/002/original/id_skill_2.png?1583788919",
+          "logo_mobile":"/logo_mobiles/original/missing.png",
+          "children":false,
+          "milestones":[
+             {
+                "id":20,
+                "age":6,
+                "skill_id":2,
+                "master":false,
+                "area_id":4,
+                "title":"Stretches her arms to be carried.",
+                "description":"If your baby expresses her need to be carried by stretching her arms, then she has completed this milestone.",
+                "science_fact":"Babies tend to communicate their emotional needs by using gestures: for example, stretching her arms to be carried. Attachment between a mother and a baby is very strong, especially during the first few years of life. Babies form this strong emotional bond with their mothers since they are in the womb, and it tends to increase once they are born.",
+                "source_data":"National Institute of Health of United States",
+                "parent_skill_id":null,
+                "media_jpg":"",
+                "media_mp4":""
+             }
+          ]
+       }
+    }
+ }

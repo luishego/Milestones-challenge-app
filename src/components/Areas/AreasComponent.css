@@ -31,24 +31,21 @@
   background-color: transparent;
   width: 20vw;
 }
-
-.tab-button:focus {
-  background-color: white;
-}
-
 .physical-button {
   border-radius: 100px 0px 0px 100px;
 }
+.social-button {
+  border-radius: 0px 100px 100px 0px;
+}
+
 .physical-button:focus {
+  background-color: white;
   color: #1faddf;
 }
 
 .social-button:focus {
+  background-color: white;
   color: #d43571;
-}
-
-.social-button {
-  border-radius: 0px 100px 100px 0px;
 }
 
 hr {

@@ -4,7 +4,7 @@ const AreaButtonComponent = ({ activeTab }) => {
   return (
     <section className="bottom-btn-container">
       <button id={activeTab} className="bottom-btn">
-        {activeTab === string.tabs.physical
+        {activeTab === string.tabs.physical.value
           ? string.button.next
           : string.button.finished}
       </button>

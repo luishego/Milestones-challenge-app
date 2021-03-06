@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./MilestoneComponent.css";
-import MilestoneButtonComponent from "../MilestonButtonComponent/MilestonButtonComponent";
+import MilestoneButtonComponent from "./MilestonButtonComponent/MilestonButtonComponent";
 
 const MilestoneComponent = ({ milestone }) => {
   const [buttonState] = useState({
     id: milestone.id,
     master: milestone.master,
   });
+
   return (
     <>
       <div className="milestone-container">
